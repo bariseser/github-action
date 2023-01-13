@@ -5,3 +5,9 @@ on:
   push:
     branches:
       - master
+jobs:
+  checkout:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
