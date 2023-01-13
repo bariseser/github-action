@@ -9,7 +9,14 @@ jobs:
   checkout:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repository
+      - name: Checkout Action
         uses: actions/checkout@v3
-      - shell: list files
-        run: ls -al
+      - name: Path Lister Action
+        id: path
+        uses: Rishabh510/Path-lister-action@1.0
+      - name: Files and Folder
+        run: |
+          echo "Found ${{ steps.pl.outputs.path_count }} file(s) with this extension:"
+          for i in ${{ steps.pl.outputs.paths }}; do
+          echo $i
+          done
