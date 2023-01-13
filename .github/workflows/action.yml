@@ -14,6 +14,9 @@ jobs:
       - name: Path Lister Action
         id: path
         uses: Rishabh510/Path-lister-action@1.0
+        with:
+          path: ".github/"
+          type: ".yml"
       - name: Files and Folder
         run: |
           echo "Found ${{ steps.pl.outputs.path_count }} file(s) with this extension:"
