@@ -1,5 +1,4 @@
 name: Github Action
-run-name: Deploy to ${{ inputs.deploy_target }} by @${{ github.actor }}
 
 on:
   push:
@@ -19,7 +18,4 @@ jobs:
           type: ".yml"
       - name: Files and Folder
         run: |
-          echo "Found ${{ steps.pl.outputs.path_count }} file(s) with this extension:"
-          for i in ${{ steps.pl.outputs.paths }}; do
-          echo $i
-          done
+          ls -al
