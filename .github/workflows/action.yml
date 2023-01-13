@@ -1,0 +1,7 @@
+name: Github Action
+run-name: Deploy to ${{ inputs.deploy_target }} by @${{ github.actor }}
+
+on:
+  push:
+    branches:
+      - master
